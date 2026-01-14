@@ -1,0 +1,20 @@
+// 再利用するスタイルの“型”
+
+// 書くもの例
+// @mixin flex-center {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// @mixin hover {
+//   &:hover {
+//     @content;
+//   }
+// }
+
+// @mixin mq($size) {
+//   @media (max-width: $size) {
+//     @content;
+//   }
+// }
