@@ -1,0 +1,11 @@
+// ↓ページ固有のスコープにするためのpage-homeクラス
+.page-home {
+  // section fv
+  .fv {
+    background-image: url(../../images/ogp.png);
+    background-size: cover;
+    background-position: center;
+    // 自動計算 https://aspect.arc-one.jp/#google_vignette
+    aspect-ratio: 40 / 21;
+  }
+}
