@@ -15,17 +15,11 @@
 
 // fonts
 // montserrat
-.f-mont {
+.en {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  //   font-weight: <weight>;
   font-style: normal;
+  font-weight: bold;
 }
 
-// noto-sans-jp
-.f-noto {
-  font-family: "Noto Sans JP", sans-serif;
-  font-optical-sizing: auto;
-  //   font-weight: <weight>;
-  font-style: normal;
-}
+// noto-sans-jpはbodyに指定

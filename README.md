@@ -1,4 +1,72 @@
-## \_index.scss の使い方
+## 今回の課題で心がけたこと
+
+### メンテナンス性の考慮
+
+前回の課題では scss でネストを多用して特異性が上がり、メンテナンスしにくいコードになってしまった。
+その反省点を活かし、可能な限りネストは 3 段階までにしてメンテナンス性を意識した。
+
+### CSS 変数（CSS カスタムプロパティ）の利用
+
+前回の課題ではフォントサイズに「clamp()」が多用されており、すべて手作業で記入したところかなりの手間になってしまった。
+
+## 備忘録
+
+### :root に書く CSS 変数（カスタムプロパティ）
+
+#### :root に変数を書くのは何のため？
+
+:root {
+--main-color: #ff7a00;
+}
+
+- JS からも触れる
+- テーマ切り替えができる
+- CSS としてそのままブラウザに残る
+
+#### Sass の$変数との使い分け
+
+Sass の$変数はビルド時に消えて**ただの値になる**ので
+
+- 設計・計算・レイアウト用 → Sass 変数$
+- 色・余白・テーマ → CSS 変数--
+
+#### 具体的な使い方
+
+1.  \_root.scss ファイルを作成し以下の例のような内容を書く。
+
+    :root {
+
+    /_ color _/  
+     --color-main: #ff7a00;  
+     --color-text: #222;  
+     --color-bg: #fff;
+
+    /_ font _/
+
+    --font-base: "Noto Sans JP", sans-serif;  
+     --fs-base: clamp(1.4rem, 1.2rem + 0.5vw, 1.6rem);
+
+    /_ spacing _/
+
+    --space-xs: 0.4rem;  
+     --space-sm: 0.8rem;  
+     --space-md: 1.6rem;  
+     --space-lg: 3.2rem;  
+    }
+
+2.  main.scss で読み込む(@use)
+
+3.  CSS 変数を使う
+
+    .button {
+
+    background-color: var(--color-main);  
+     color: var(--color-bg);  
+     padding: var(--space-sm) var(--space-md);  
+     font-family: var(--font-base);  
+    }
+
+### \_index.scss の使い方
 
 Sass（SCSS）における \_index.scss は、主にフォルダ内の複数のファイルを 1 つにまとめ、外部から呼び出しやすくするために使用されます。
 
@@ -7,7 +75,7 @@ Sass（SCSS）における \_index.scss は、主にフォルダ内の複数の�
 - 基本の書き方（@forward）  
   現在の Sass では @import ではなく @forward を使うのが標準的です。
 
-### 例
+#### 例
 
 src/scss/  
  ├── global/  
@@ -38,7 +106,7 @@ src/scss/
  // color: $text-color;  
 }
 
-### 書き方のポイント
+#### 書き方のポイント
 
 1. 名前空間の活用  
    @use '../global' と書くと、デフォルトでフォルダ名（global）が名前空間になります。  

@@ -1,11 +1,97 @@
+@use "../base/variables" as vars;
+@use "../components/buttons" as b;
+
 // ↓ページ固有のスコープにするためのpage-homeクラス
 .page-home {
   // section fv
   .fv {
-    background-image: url(../../images/ogp.png);
+    background-image: linear-gradient(
+      to bottom right,
+      #0e002e 0%,
+      #1e092b 23%,
+      #320c65 49%,
+      #a01b7c 80%,
+      #c21780 100%
+    );
     background-size: cover;
     background-position: center;
-    // 自動計算 https://aspect.arc-one.jp/#google_vignette
-    aspect-ratio: 40 / 21;
+    // aspect-ratioの自動計算 https://aspect.arc-one.jp/#google_vignette
+    aspect-ratio: 683 / 350;
+    position: relative;
+    overflow: hidden; // 人物画像がはみ出ることを想定し設定
+  }
+  // むやみに&でつなげない
+  // できれば3階層までに抑えるように
+  .fv__menu {
+    padding-top: clamp(1rem, 3%, 31px);
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative; // z-indexを使って画像の上にメニューを置くための指定
+    z-index: 20;
+  }
+  .fv__logo a {
+    font-size: var(--fz26);
+    color: vars.$color-main;
+  }
+  .fv__menu__list {
+    display: flex;
+  }
+  .fv__menu__item {
+    margin-right: 30px;
+  }
+  .fv__menu__item a {
+    font-size: var(--fz16);
+    color: vars.$color-sub;
+  }
+  // ここまで上部のメニュー
+  // ここから画面中央の文字領域
+  .fv__text__area {
+    position: absolute;
+    top: 21.9%;
+    left: 7.2%;
+    z-index: 20;
+  }
+  .fv__title .wdc {
+    font-size: var(--fz24);
+    color: vars.$color-main;
+    display: block;
+  }
+  .fv__title .work {
+    font-size: clamp(
+      4rem,
+      8vw,
+      10rem
+    ); // 一度しか使わなそうなので変数に入れない
+    color: vars.$color-sub;
+    display: block;
+    font-weight: 700;
+    transform: scaleX(1.35); // figmaと文字の横幅が違うので調整
+    transform-origin: left;
+  }
+  .fv__time {
+    display: block;
+    font-size: var(--fz36);
+    margin-top: clamp(0.4rem, 1.5vw, 1rem);
+  }
+  .fv__btn {
+    @include b.btn-base(30rem);
+    width: clamp(100px, 22vw, 30rem);
+    padding-top: clamp(0.8rem, 2.5vw, 2.9rem);
+    padding-bottom: clamp(0.8rem, 2.5vw, 2.9rem);
+    font-size: var(--fz18);
+    margin-top: clamp(1rem, 4%, 3.2rem);
+  }
+  .fv__teiji {
+    position: absolute;
+    left: 32.9%;
+    top: 56%;
+    z-index: 10;
+  }
+  .fv__shawn img {
+    position: absolute;
+    bottom: 0;
+    right: 4.7%;
+    width: 41%;
+    z-index: 5;
   }
 }

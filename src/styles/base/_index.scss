@@ -1,5 +1,6 @@
 // @forwardでstyle.scssに渡す
 @forward "./reset";
+@forward "./root";
 @forward "./variables";
 @forward "./mixins";
 @forward "./helpers";

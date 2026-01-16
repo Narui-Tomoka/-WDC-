@@ -11,6 +11,8 @@
 //   text-decoration: none;
 // }
 
+@use "./variables" as vars;
+
 html {
   box-sizing: border-box;
   font-size: 62.5%; // =10px。remをpxに近い感覚で使えるように指定
@@ -18,9 +20,12 @@ html {
 }
 
 body {
-  color: #fff;
+  color: vars.$color-sub;
   font-size: 1.6rem; // 10pxを16pxに調整
   //   font-feature-settings: "palt" 1; 必要に応じて
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 *,
@@ -44,4 +49,5 @@ li {
 
 img {
   vertical-align: bottom;
+  object-fit: cover;
 }

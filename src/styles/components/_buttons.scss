@@ -1,3 +1,4 @@
+@use "../base/variables" as vars;
 // .button {
 //   padding: 12px 24px;
 //   background: $color-main;
@@ -6,8 +7,6 @@
 //   &--secondary {}
 // }
 // _menu.scss
-// scss
-// コードをコピーする
 // .menu {
 //   display: flex;
 // }
@@ -16,3 +15,15 @@
 // どのページでも使える前提
 
 // 位置や余白は書きすぎない
+
+@mixin btn-base($width) {
+  width: $width;
+  font-size: 1.8rem; // 18px
+  border-radius: 5rem;
+  box-shadow: 0 clamp(0.4rem, 1.5vw, 1rem) 0 rgb(221, 17, 141);
+  color: vars.$color-sub;
+  display: inline-flex; // 外向きはインライン、要素の中ではflexのふるまい
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #c41a7f 0%, #664bbf 100%);
+}
