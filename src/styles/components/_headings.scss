@@ -1,0 +1,17 @@
+// section-titleなどのタイトル群のスタイル
+@use "../base/variables" as vars;
+
+.section-title {
+  font-size: var(--fz60);
+  color: vars.$color-main;
+  text-align: center;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  font-size: -var(--fz20);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}

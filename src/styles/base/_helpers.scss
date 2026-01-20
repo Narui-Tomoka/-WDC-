@@ -23,3 +23,11 @@
 }
 
 // noto-sans-jpはbodyに指定
+
+// 幅制限用
+// コンテンツ幅1100pxを保証するためここにはpaddingは記載しない
+.inner {
+  margin: 0 auto;
+  width: 1100px;
+  max-width: 100%;
+}

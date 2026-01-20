@@ -1,10 +1,17 @@
 // サイト全体の「ルール」（このサイトではこうする）を:rootに置く
 // 一度きりの演出用ならセレクタに直書きでOKだが再利用する可能性があればCSS変数にしておく
 
+// font-sizeはレスポンシブ対応も想定しclamp()で指定
+// 自動計算ツール：https://min-max-calculator.9elements.com/?16
+// remで算出。viewport 375~1100pxで計算
+// 最小フォントサイズは1.4rem（モバイルサイズの本文で14~16pxのサイトが多いため）
 :root {
-  --fz36: clamp(1.4rem, 2.6vw, 3.6rem);
-  --fz26: clamp(1.4rem, 3vw, 2.6rem);
-  --fz24: clamp(1.4rem, 2.2vw, 2.4rem);
-  --fv18: clamp(1rem, 2vw, 1.8rem);
-  --fz16: clamp(1rem, 2vw, 1.6rem);
+  --fz60: clamp(2.4rem, 0.563rem + 7.84vw, 6rem);
+  --fz48: clamp(2.2rem, 0.873rem + 5.66vw, 4.8rem);
+  --fz36: clamp(2rem, 1.184rem + 3.48vw, 3.6rem);
+  --fz26: clamp(2rem, 1.694rem + 1.31vw, 2.6rem);
+  --fz24: clamp(1.8rem, 1.494rem + 1.31vw, 2.4rem);
+  --fz20: clamp(1.6rem, 1.396rem + 0.87vw, 2rem);
+  --fv18: clamp(1.6rem, 1.498rem + 0.44vw, 1.8rem);
+  --fz16: clamp(1.4rem, 1.298rem + 0.44vw, 1.6rem);
 }
