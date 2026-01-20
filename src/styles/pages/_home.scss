@@ -96,8 +96,8 @@
   }
   // section about
   .about {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: vars.$section-padding;
+    padding-bottom: vars.$section-padding;
     // ↓画面幅が小さくなった時にコンテンツが画面端にくっつかない設定
     padding-inline: max(16px, calc((100% - 1100px) / 2));
     background-color: #141414;
@@ -129,6 +129,7 @@
   }
   .about__text {
     margin-top: 4rem;
+    line-height: 1.8; // Figmaの行間 / フォントサイズ
     font-size: var(--fz18);
   }
   .about__info {
@@ -159,4 +160,57 @@
     margin-top: clamp(2rem, 1.745rem + 1.09vw, 2.5rem);
   }
   // section speaker
+  .speaker {
+    padding-top: vars.$section-padding;
+    padding-bottom: vars.$section-padding;
+    padding-inline: max(16px, calc((100% - 1100px) / 2));
+    background: linear-gradient(
+      to bottom right,
+      #0f002e 0%,
+      #0e002e 0%,
+      #1e092b 23%,
+      #320c65 49%,
+      #a01b7c 80%,
+      #c21780 100%
+    );
+  }
+  .speaker__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 8rem;
+    &:nth-of-type(1) {
+      margin-top: 6rem;
+    }
+    &:nth-child(even) {
+      flex-direction: row;
+    }
+  }
+  .speaker__container-textarea {
+    width: 55%;
+  }
+  .speaker__name {
+    & span {
+      display: block;
+    }
+    &-en {
+      font-size: var(--fz42);
+      color: vars.$color-main;
+    }
+    &-ja {
+      font-size: var(--fz18);
+      margin-top: 1rem;
+    }
+  }
+  .speaker__text {
+    letter-spacing: 0.05em;
+    margin-top: 4rem;
+    line-height: 1.8; // 単位なしにする→レスポンシブ対応
+  }
+  .speaker__container-imgarea {
+    width: 40.5%;
+  }
+  .speaker__img {
+    max-width: 100%;
+  }
 }
