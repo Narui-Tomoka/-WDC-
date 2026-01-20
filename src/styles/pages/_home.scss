@@ -103,9 +103,6 @@
     background-color: #141414;
     width: 100%;
   }
-  .about__title span {
-    display: block;
-  }
   .about__container {
     margin-top: clamp(3rem, 1.469rem + 6.53vw, 6rem);
   }
@@ -161,4 +158,5 @@
     font-size: var(--fz18);
     margin-top: clamp(2rem, 1.745rem + 1.09vw, 2.5rem);
   }
+  // section speaker
 }

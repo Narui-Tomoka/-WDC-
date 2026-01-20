@@ -19,7 +19,7 @@
 @mixin btn-base($width) {
   width: $width;
   font-size: 1.8rem; // 18px
-  border-radius: 5rem;
+  border-radius: 50px;
   box-shadow: 0 clamp(0.4rem, 1.5vw, 1rem) 0 rgb(221, 17, 141);
   color: vars.$color-sub;
   display: inline-flex; // 外向きはインライン、要素の中ではflexのふるまい
