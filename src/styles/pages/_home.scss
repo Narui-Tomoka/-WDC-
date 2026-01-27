@@ -37,11 +37,18 @@
     display: flex;
   }
   .fv__menu__item {
-    margin-right: 30px;
+    margin-right: 3rem;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   .fv__menu__item a {
     font-size: var(--fz16);
     color: vars.$color-sub;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
   }
   // ここまで上部のメニュー
   // ここから画面中央の文字領域
@@ -80,6 +87,12 @@
     padding-bottom: clamp(0.8rem, 2.5vw, 2.9rem);
     font-size: var(--fz18);
     margin-top: clamp(1rem, 4%, 3.2rem);
+    &::after {
+      @include b.shine-btn;
+    }
+    &:hover::after {
+      animation: shine 0.4s ease-in-out;
+    }
   }
   .fv__teiji {
     position: absolute;
@@ -159,6 +172,12 @@
     padding-bottom: clamp(2rem, 1.796rem + 0.87vw, 2.4rem);
     font-size: var(--fz18);
     margin-top: clamp(2rem, 1.745rem + 1.09vw, 2.5rem);
+    &::after {
+      @include b.shine-btn;
+    }
+    &:hover::after {
+      animation: shine 0.4s ease-in-out;
+    }
   }
   // section speaker
   .speaker {
@@ -336,6 +355,12 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+    &::after {
+      @include b.shine-btn;
+    }
+    &:hover::after {
+      animation: shine 0.4s ease-in-out;
+    }
   }
   // footer
   .footer {
