@@ -2,7 +2,8 @@
 
 ## 課題URL
 
-- GitHub
+- GitHub  
+  https://github.com/Narui-Tomoka/-WDC-
 - Figmaデザイン  
   https://www.figma.com/design/KCeV5O1Gmf7UKLhi6y4ViO/wdc?node-id=1-19&t=IWYyx3J9OKC0bYLs-1
 
@@ -41,6 +42,8 @@ html に `font-size: 62.5%`、body に `font-size: 1.6rem` を指定。
 これにより **1rem = 10px 相当** となり、px ベースの Figma デザインからの変換がしやすくなった。
 
 ※実際のブラウザ上では body の指定により本文サイズは 16px になる。
+
+---
 
 ### レスポンシブ対応を意識し font-size 等に clamp() を使用
 
