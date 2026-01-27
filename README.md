@@ -5,6 +5,11 @@
 - GitHub
 - Figmaデザイン https://www.figma.com/design/KCeV5O1Gmf7UKLhi6y4ViO/wdc?node-id=1-19&t=IWYyx3J9OKC0bYLs-1
 
+## 活用した自動計算サイト
+
+- aspect-ratio自動計算　https://aspect.arc-one.jp/#google_vignette
+- clamp()自動計算　https://min-max-calculator.9elements.com/?16
+
 ## 今回の課題で心がけたこと
 
 ### メンテナンス性の考慮
