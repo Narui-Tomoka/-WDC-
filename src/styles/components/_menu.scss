@@ -1,0 +1,40 @@
+// ページトップへ戻るリンク
+.page-top {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #c41a7f, #664bbf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 1000;
+}
+
+.page-top:hover {
+  transform: translateY(-4px);
+}
+
+/* 上矢印 */
+.page-top__arrow {
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  transform: rotate(45deg);
+  margin-top: 6px; /* 視覚的に中央に見えるよう微調整 */
+}
+
+/* fvにいる間だけ消す用 */
+.page-top.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
