@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="src/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Web Design Conference</title>
   </head>
   <body class="page-home">
     <section id="fv" class="fv">
@@ -19,13 +20,13 @@
         </div>
         <ul class="fv__menu__list">
           <li class="fv__menu__item">
-            <a class="f-mont bold" href="#">ABOUT</a>
+            <a class="f-mont bold" href="#about">ABOUT</a>
           </li>
           <li class="fv__menu__item">
-            <a class="f-mont bold" href="#">SPEAKER</a>
+            <a class="f-mont bold" href="#speaker">SPEAKER</a>
           </li>
           <li class="fv__menu__item">
-            <a class="f-mont bold" href="#">SESSION</a>
+            <a class="f-mont bold" href="#session">SESSION</a>
           </li>
         </ul>
       </div>
@@ -35,7 +36,7 @@
           <span class="work">WORK<br />REVOLUTION</span>
         </h1>
         <time class="fv__time" datetime="2030-05-30">2030.05.30</time>
-        <a href="#" class="fv__btn"> お申し込み </a>
+        <a href="#registor" class="fv__btn"> お申し込み </a>
       </div>
       <div class="fv__teiji">
         <img src="src/images/teiji-de-kaerumon.png" alt="定時で帰るもん" />
@@ -73,7 +74,7 @@
               <dt class="f-mont">参加費</dt>
               <dd class="f-mont">無料</dd>
             </dl>
-            <a href="#" class="about__btn"> お申し込み </a>
+            <a href="#registor" class="about__btn"> お申し込み </a>
           </div>
         </div>
       </div>
@@ -241,9 +242,112 @@
           <span class="f-mont bold section__title-main">REGISTOR</span>
           <span class="section__title-label">お申し込み</span>
         </h2>
+        <!-- フォーム -->
+        <form class="registor__form" action="#">
+          <!-- 職業 -->
+          <!-- fieldset要素でフォーム部品をグループ化できる -->
+          <fieldset>
+            <!-- グループの表題はlegendタグ。fieldsetタグの中で使う -->
+            <legend class="registor__form-label">
+              ご職業<span class="registor__required">*必須</span>
+            </legend>
+            <!-- ↓forとidで関連を明示する書き方。 -->
+            <!-- 複数のラジオボタンはname属性の値をそろえることでグループ化できる -->
+            <!-- ラジオボタンの場合、同じname属性を持つinputタグいずれかにrequiredをつければいい -->
+            <div class="registor__form--radio">
+              <input type="radio" id="employee" name="job" required />
+              <label for="employee" class="registor__form-label">会社員</label>
+            </div>
+            <div class="registor__form--radio">
+              <input type="radio" id="freelancer" name="job" />
+              <label for="freelancer" class="registor__form-label"
+                >個人事業主</label
+              >
+            </div>
+            <div class="registor__form--radio">
+              <input type="radio" id="job-seaker" name="job" />
+              <label for="job-seaker" class="registor__form-label"
+                >求職中</label
+              >
+            </div>
+          </fieldset>
+          <!-- /職業 -->
+          <!-- 名前 -->
+          <div class="registor__form--text">
+            <label class="l-block registor__form-label"
+              >お名前<span class="registor__required">*必須</span
+              ><input
+                type="text"
+                name="name"
+                class="l-block"
+                required
+                autocomplete="name"
+            /></label>
+          </div>
+          <!-- /名前 -->
+          <!-- メールアドレス -->
+          <div class="registor__form--email">
+            <label class="l-block registor__form-label"
+              >メールアドレス<span class="registor__required">*必須</span
+              ><input
+                type="email"
+                name="email"
+                class="l-block"
+                required
+                autocomplete="email"
+            /></label>
+          </div>
+          <!-- /メールアドレス -->
+          <!-- 電話番号 -->
+          <div class="registor__form--tel">
+            <label class="l-block registor__form-label"
+              >電話番号<span>（半角数字ハイフンなし）</span
+              ><input
+                type="tel"
+                name="tel"
+                class="l-block"
+                pattern="[0-9]{10,11}"
+                autocomplete="tel"
+            /></label>
+          </div>
+          <!-- /電話番号 -->
+          <!-- 質問 -->
+          <div class="registor__form--textarea">
+            <label for="question" class="l-block registor__form-label"
+              >スピーカーに質問したいこと<span class="registor__required"
+                >*必須</span
+              ></label
+            >
+            <textarea
+              name="question"
+              id="question"
+              placeholder="ご自由にお書きください"
+              required
+            ></textarea>
+          </div>
+          <!--  /質問 -->
+          <!-- きっかけ -->
+          <label for="opp" class="l-block registor__form-label"
+            >WDCをどちらでお知りになられましたか？
+            <span class="registor__required">*必須</span></label
+          >
+          <select name="opp" id="opp" class="registor__form--select" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="X">X（旧Twitter）</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Introduction">
+              Webデザイナー研修講師からの紹介
+            </option>
+            <option value="others">その他</option>
+          </select>
+          <!-- /きっかけ -->
+          <button type="submit" class="registor__btn">送信する</button>
+        </form>
       </div>
     </section>
-    <footer id="footer" class="footer"></footer>
+    <footer id="footer" class="footer">
+      <p class="footer__text f-mont bold">©2030 Web Design Conference</p>
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
