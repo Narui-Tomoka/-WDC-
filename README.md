@@ -1,11 +1,31 @@
 # 課題「Web Design Conference」
 
+## このファイルの目的
+
+- 先生の添削時に意図を伝えやすくするため
+- 自分自身の振り返り・備忘録として
+- マークダウン記法の練習として
+
 ## 課題URL
 
 - GitHub  
   https://github.com/Narui-Tomoka/-WDC-
 - Figmaデザイン  
   https://www.figma.com/design/KCeV5O1Gmf7UKLhi6y4ViO/wdc?node-id=1-19&t=IWYyx3J9OKC0bYLs-1
+
+## 使用技術
+
+### 言語・ライブラリ
+
+- HTML
+- CSS（SCSS）
+- JavaScript
+
+### 開発環境・ツール
+
+- Vite
+- Autoprefixer（VS Code 拡張機能）
+- markdownlint（VS Code 拡張機能／Markdown プレビュー用）
 
 ## 活用した自動計算サイト
 
