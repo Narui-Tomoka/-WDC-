@@ -22,34 +22,7 @@
   }
   // むやみに&でつなげない
   // できれば3階層までに抑えるように
-  .fv__menu {
-    padding-top: clamp(1rem, 3%, 31px);
-    padding-left: 30px;
-    padding-right: 30px;
-    position: relative; // z-indexを使って画像の上にメニューを置くための指定
-    z-index: 20;
-  }
-  .fv__logo a {
-    font-size: var(--fz26);
-    color: vars.$color-main;
-  }
-  .fv__menu__list {
-    display: flex;
-  }
-  .fv__menu__item {
-    margin-right: 3rem;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  .fv__menu__item a {
-    font-size: var(--fz16);
-    color: vars.$color-sub;
-    transition: opacity 0.3s;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+
   // ここまで上部のメニュー
   // ここから画面中央の文字領域
   .fv__text__area {
@@ -276,14 +249,14 @@
     letter-spacing: 0.05em;
   }
 
-  // section registor
-  .registor {
-    background: url(../../images/registor-bg.png) repeat;
+  // section register
+  .register {
+    background: url(../../images/register-bg.png) repeat;
     padding-top: vars.$section-padding;
     padding-bottom: vars.$section-padding;
     padding-inline: max(16px, calc((100% - 1100px) / 2));
   }
-  .registor__form {
+  .register__form {
     background-color: #1a1a1a;
     border: vars.$color-main solid 5px;
     border-radius: 20px;
@@ -292,60 +265,60 @@
     padding-top: clamp(6rem, 4.469rem + 6.53vw, 9rem);
     padding-bottom: clamp(6rem, 4.469rem + 6.53vw, 9rem);
   }
-  .registor__form-label {
+  .register__form-label {
     font-size: var(--fz16);
     margin-top: 3rem;
   }
-  .registor__required {
+  .register__required {
     font-size: 1.12rem;
     color: vars.$color-main;
     margin-left: 0.6rem;
   }
   // 入力箇所の上の余白
-  .registor__form--radio,
-  .registor__form--text input,
-  .registor__form--tel input,
-  .registor__form--email input,
-  .registor__form--textarea textarea,
-  .registor__form--select {
+  .register__form--radio,
+  .register__form--text input,
+  .register__form--tel input,
+  .register__form--email input,
+  .register__form--textarea textarea,
+  .register__form--select {
     margin-top: 1rem;
   }
   // 入力箇所の角丸
-  .registor__form--text input,
-  .registor__form--tel input,
-  .registor__form--email input,
-  .registor__form--textarea textarea,
-  .registor__form--select {
+  .register__form--text input,
+  .register__form--tel input,
+  .register__form--email input,
+  .register__form--textarea textarea,
+  .register__form--select {
     border-radius: 6px;
   }
-  .registor__form--text input,
-  .registor__form--email input,
-  .registor__form--select {
+  .register__form--text input,
+  .register__form--email input,
+  .register__form--select {
     max-width: 100%;
     width: 30rem;
     height: 3.5rem;
   }
-  .registor__form--tel input {
+  .register__form--tel input {
     max-width: 100%;
     width: 20rem;
     height: 3.5rem;
   }
   // ラジオボタンのスタイル
-  .registor__form--radio {
+  .register__form--radio {
     display: inline-block;
     margin-right: 3.5rem;
     &:last-child {
       margin-right: 0;
     }
   }
-  .registor__form--textarea textarea {
+  .register__form--textarea textarea {
     resize: none;
     max-width: 100%;
     width: 600px;
     height: 200px;
     padding: 0.8rem;
   }
-  .registor__btn {
+  .register__btn {
     @include b.btn-base(30rem);
     width: clamp(100px, 22vw, 30rem);
     padding-top: clamp(0.8rem, 2.5vw, 2.6rem);
