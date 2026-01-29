@@ -256,3 +256,42 @@ src/scss/
 
 - アクセシビリティ:  
   スクリーンリーダーなどは、まず header を探し、次に main を探す。この順番が崩れないのが理想的。
+
+### プルダウンメニューの作り方
+
+HTMLでプルダウンメニュー（ドロップダウンリスト）を作成する最も基本的な方法は、\<select>要素と\<option>要素を使用すること。
+
+1. 基本的なプルダウンメニュー  
+   \<label for="fruits">好きな果物を選んでください\</label>  
+   \<select name="fruits" id="fruits">  
+    \<option value="apple">りんご\</option>  
+    \<option value="banana">バナナ\</option>  
+    \<option value="orange">オレンジ\</option>  
+   \</select>
+
+2. よく使われる属性
+   selected: 最初から特定の項目を選択状態にする。
+   disabled: その項目を選択不可にする。
+   required: フォーム送信時に選択を必須にする。  
+   \<select name="pref" required>  
+    \<option value="">都道府県を選択してください\</option>  
+    \<!-- プレースホルダーとして利用 -->  
+    \<option value="tokyo" selected>東京都\</option>  
+    \<option value="osaka" disabled>大阪府（準備中）\</option>  
+   \</select>
+
+3. グループ化 (\<optgroup>)  
+   項目をカテゴリーごとに分類したい場合に使用する。  
+   \<select name="cars">  
+    \<optgroup label="国産車">  
+    \<option value="toyota">トヨタ\</option>  
+    \<option value="honda">ホンダ\</option>  
+    \</optgroup>  
+    \<optgroup label="外車">  
+    \<option value="bmw">BMW\</option>  
+    \<option value="mercedes">メルセデス\</option>  
+    \</optgroup>  
+   \</select>
+
+4. 応用：クリックで開くメニュー（CSS/JS）  
+   フォームではなく、ナビゲーションメニューとしてデザイン性を高めたい場合は、\<ul>タグとCSS（ホバーやクリックイベント）を組み合わせて作成するのが一般的。
