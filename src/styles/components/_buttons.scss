@@ -16,8 +16,7 @@
 
 // 位置や余白は書きすぎない
 
-@mixin btn-base($width) {
-  width: $width;
+@mixin btn-base {
   font-size: 1.8rem; // 18px
   border-radius: 50px;
   box-shadow: 0 clamp(0.4rem, 1.5vw, 1rem) 0 rgb(221, 17, 141);
