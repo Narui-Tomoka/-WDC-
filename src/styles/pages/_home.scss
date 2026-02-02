@@ -219,38 +219,54 @@
     background-color: #141414;
     width: 100%;
   }
-  .session__container {
-    display: flex;
+  .session-table {
     width: 100%;
-    margin-top: clamp(3rem, 2.49rem + 2.18vw, 4rem);
-    padding-bottom: 4rem;
-    border-bottom: 1px solid vars.$color-main;
-    &:first-of-type {
-      margin-top: clamp(6rem, 3.959rem + 8.71vw, 10rem);
+    border-collapse: collapse; // セル間の隙間をなくす
+    margin-top: clamp(6rem, 3.959rem + 8.71vw, 10rem); // 最初の要素の余白
+
+    &__row {
+      border-bottom: 1px solid vars.$color-main;
+
+      // 各行の上下の余白感を調整（元のmargin-topとpadding-bottomを再現）
+      & > th,
+      & > td {
+        padding-top: clamp(3rem, 2.49rem + 2.18vw, 4rem);
+        padding-bottom: 4rem;
+        vertical-align: top; // 上揃え
+        text-align: left;
+      }
     }
-  }
-  .session__time {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    width: fit-content;
-    time {
+
+    &__time-cell {
+      width: 1%; // コンテンツに合わせて最小幅に（white-space: nowrapと併用）
+      white-space: nowrap;
+    }
+
+    &__time {
+      padding-left: 3rem;
+      padding-right: 3rem;
       font-size: var(--fz22);
       letter-spacing: 0.05em;
     }
-  }
-  .session__text-area {
-    margin-left: 2.4rem;
-  }
-  .session__title {
-    color: vars.$color-main;
-    font-size: var(--fz22);
-    letter-spacing: 0.05em;
-  }
-  .session__text {
-    margin-top: 1.5rem;
-    font-size: var(--fz15);
-    line-height: 1.5;
-    letter-spacing: 0.05em;
+
+    &__content-cell {
+      padding-left: 2.4rem; // session__text-areaのmargin-leftを継承
+    }
+
+    &__title {
+      color: vars.$color-main;
+      font-size: var(--fz22);
+      letter-spacing: 0.05em;
+      font-weight: bold;
+    }
+
+    &__text {
+      margin-top: 1.5rem;
+      font-size: var(--fz15);
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+      color: vars.$color-sub;
+    }
   }
 
   // section register

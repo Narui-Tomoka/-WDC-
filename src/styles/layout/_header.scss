@@ -1,5 +1,11 @@
 @use "../base/variables" as vars;
 
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
 .header__menu {
   padding-top: clamp(1rem, 3%, 30px);
   padding-left: 3rem;
