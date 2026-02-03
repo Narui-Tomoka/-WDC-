@@ -1,4 +1,5 @@
 //  ちょっとした便利クラス（ユーティリティ）
+@use "./mixins" as mix;
 
 // fonts
 // montserrat
@@ -20,4 +21,12 @@
   margin: 0 auto;
   width: 1100px;
   max-width: 100%;
+}
+
+// レスポンシブデザイン　メニュー改行用
+.pc-off {
+  display: none;
+  @include mix.mq(pc-to-tab) {
+    display: block;
+  }
 }

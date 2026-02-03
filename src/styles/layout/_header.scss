@@ -7,9 +7,9 @@
   z-index: 1000;
 }
 .header__menu {
-  padding-top: clamp(1rem, 3%, 30px);
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-top: clamp(1rem, 3%, 3rem);
+  padding-left: clamp(1rem, 3%, 3rem);
+  padding-right: clamp(1rem, 3%, 3rem);
   position: absolute; // z-indexを使って画像の上にメニューを置くための指定
   z-index: 20;
   width: 100%;

@@ -1,5 +1,6 @@
 @use "../base/variables" as vars;
 @use "../components/buttons" as b;
+@use "../base/mixins" as mix;
 
 // ↓ページ固有のスコープにするためのpage-homeクラス
 .page-home {
@@ -19,6 +20,9 @@
     aspect-ratio: 683 / 350;
     position: relative;
     overflow: hidden; // 人物画像がはみ出ることを想定し設定
+    @include mix.mq(tab) {
+      aspect-ratio: 540 / 350; // 申し込みボタンの見切れ防止
+    }
   }
   // むやみに&でつなげない
   // できれば3階層までに抑えるように
@@ -38,7 +42,7 @@
   }
   .fv__title .work {
     font-size: clamp(
-      4rem,
+      3rem,
       8vw,
       10rem
     ); // 一度しか使わなそうなので変数に入れない
@@ -50,7 +54,7 @@
   }
   .fv__time {
     display: block;
-    font-size: var(--fz36);
+    font-size: var(--fz36-date);
     margin-top: clamp(0.4rem, 1.5vw, 1rem);
   }
   .fv__btn {
@@ -59,7 +63,7 @@
     padding-top: clamp(0.8rem, 2.5vw, 2.9rem);
     padding-bottom: clamp(0.8rem, 2.5vw, 2.9rem);
     font-size: var(--fz18);
-    margin-top: clamp(1rem, 4%, 3.2rem);
+    margin-top: clamp(1rem, 2%, 3.2rem);
     &::after {
       @include b.shine-btn;
     }
@@ -95,15 +99,34 @@
   }
   .about__container {
     margin-top: clamp(3rem, 1.469rem + 6.53vw, 6rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mix.mq(pc-to-tab) {
+      flex-direction: column;
+    }
   }
   .about__img-area {
     width: 40.5%;
+    text-align: center;
+    @include mix.mq(pc-to-tab) {
+      width: 90%;
+    }
     img {
       max-width: 100%;
+      @include mix.mq(pc-to-tab) {
+        width: 100%;
+        max-width: 700px;
+        max-height: 500px;
+      }
     }
   }
   .about__text-area {
     width: 54.5%;
+    @include mix.mq(pc-to-tab) {
+      width: 90%;
+      margin-top: 3rem;
+    }
   }
   .about__subtitle {
     &-label {
@@ -142,9 +165,12 @@
       }
     }
   }
+  .about__btn--wrap {
+    text-align: center;
+  }
   .about__btn {
     @include b.btn-base;
-    width: clamp(4.8rem, -4.486rem + 39.62vw, 23rem);
+    width: clamp(4.8rem, -3.7rem + 39.62vw, 23rem);
     padding-top: clamp(2rem, 1.796rem + 0.87vw, 2.4rem);
     padding-bottom: clamp(2rem, 1.796rem + 0.87vw, 2.4rem);
     font-size: var(--fz18);
