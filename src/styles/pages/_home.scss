@@ -205,7 +205,7 @@
   .speaker__container {
     display: flex;
     justify-content: space-between;
-    margin-top: 8rem;
+    margin-top: clamp(6rem, 4.98rem + 4.35vw, 8rem);
     &:nth-of-type(1) {
       margin-top: 6rem;
     }

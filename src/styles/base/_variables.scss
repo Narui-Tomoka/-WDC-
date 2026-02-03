@@ -37,6 +37,8 @@ $breakpoints: (
 
   // ===== TABLET / SP =====
   "sp": "screen and (max-width: 767px)",
+  // footerとページトップボタンが重ならないための微調整
+  "sp-min": "screen and (max-width: 450px)",
   // メインSP・タブレット
   "tab-wide": "screen and (max-width: 851px)"
 );
