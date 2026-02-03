@@ -1,0 +1,9 @@
+// footer
+.footer {
+  background-color: #141414;
+  padding: clamp(3rem, 0.959rem + 8.71vw, 7rem) 0;
+}
+.footer__text {
+  font-size: var(--fz16);
+  text-align: center;
+}

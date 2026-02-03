@@ -36,13 +36,7 @@ $breakpoints: (
   "pc": "screen and (min-width: 801px)",
 
   // ===== TABLET / SP =====
-  "tab": "screen and (max-width: 800px)",
+  "sp": "screen and (max-width: 767px)",
   // メインSP・タブレット
-  "tab-wide": "screen and (max-width: 851px)",
-
-  // tel制御など特殊用途
-  // ===== SP =====
-  "sp-wide": "screen and (max-width: 430px) and (min-width: 376px)",
-  // iPhone Pro / Plus
-  "sp": "screen and (max-width: 375px)" // 標準SP・最小幅
+  "tab-wide": "screen and (max-width: 851px)"
 );

@@ -1,4 +1,5 @@
 @use "../base/variables" as vars;
+@use "../base/mixins" as mix;
 
 .header {
   position: fixed;
@@ -23,6 +24,9 @@
 }
 .header__menu__item {
   margin-right: 3rem;
+  @include mix.mq(sp) {
+    margin-right: 1.8rem;
+  }
   &:last-child {
     margin-right: 0;
   }

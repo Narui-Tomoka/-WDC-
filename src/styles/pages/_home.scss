@@ -20,7 +20,7 @@
     aspect-ratio: 683 / 350;
     position: relative;
     overflow: hidden; // 人物画像がはみ出ることを想定し設定
-    @include mix.mq(tab) {
+    @include mix.mq(sp) {
       aspect-ratio: 540 / 350; // 申し込みボタンの見切れ防止
     }
   }
@@ -59,7 +59,7 @@
   }
   .fv__btn {
     @include b.btn-base;
-    width: clamp(100px, 22vw, 30rem);
+    width: clamp(120px, 22vw, 30rem);
     padding-top: clamp(0.8rem, 2.5vw, 2.9rem);
     padding-bottom: clamp(0.8rem, 2.5vw, 2.9rem);
     font-size: var(--fz18);
@@ -116,7 +116,6 @@
       max-width: 100%;
       @include mix.mq(pc-to-tab) {
         width: 100%;
-        max-width: 700px;
         max-height: 500px;
       }
     }
@@ -153,6 +152,9 @@
     dt {
       width: 14.4%;
       margin-top: 1rem;
+      @include mix.mq(sp) {
+        width: 20%; // 文字が改行されて見づらくなるのを防ぐため
+      }
       &:first-of-type {
         margin-top: 2.5rem;
       }
@@ -160,6 +162,9 @@
     dd {
       width: 85.4%;
       margin-top: 1rem;
+      @include mix.mq(sp) {
+        width: 80%;
+      }
       &:first-of-type {
         margin-top: 2.5rem;
       }
@@ -199,20 +204,36 @@
   }
   .speaker__container {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     margin-top: 8rem;
     &:nth-of-type(1) {
       margin-top: 6rem;
     }
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+      @include mix.mq(pc-to-tab) {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+    }
     &:nth-child(even) {
       flex-direction: row;
+      @include mix.mq(pc-to-tab) {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
     }
   }
   .speaker__container-textarea {
     width: 55%;
+    @include mix.mq(pc-to-tab) {
+      width: 95%;
+    }
   }
   .speaker__name {
+    @include mix.mq(pc-to-tab) {
+      margin-top: 3rem;
+    }
     & span {
       display: block;
     }
@@ -232,6 +253,9 @@
   }
   .speaker__container-imgarea {
     width: 40.5%;
+    @include mix.mq(pc-to-tab) {
+      width: 95%;
+    }
   }
   .speaker__img {
     max-width: 100%;
@@ -273,10 +297,19 @@
       padding-right: 3rem;
       font-size: var(--fz22);
       letter-spacing: 0.05em;
+      width: 200px;
+      @include mix.mq(sp) {
+        width: 80px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
     }
 
     &__content-cell {
       padding-left: 2.4rem; // session__text-areaのmargin-leftを継承
+      @include mix.mq(sp) {
+        padding-left: 1.6rem; // 文字が窮屈になるので間隔調整
+      }
     }
 
     &__title {
@@ -366,7 +399,7 @@
   }
   .register__btn {
     @include b.btn-base;
-    width: clamp(100px, 22vw, 30rem);
+    width: clamp(120px, 22vw, 30rem);
     padding-top: clamp(0.8rem, 2.5vw, 2.6rem);
     padding-bottom: clamp(0.8rem, 2.5vw, 2.6rem);
     font-size: var(--fz18);
@@ -380,14 +413,5 @@
     &:hover::after {
       animation: shine 0.4s ease-in-out;
     }
-  }
-  // footer
-  .footer {
-    background-color: #141414;
-    padding: 7rem 0;
-  }
-  .footer__text {
-    font-size: var(--fz16);
-    text-align: center;
   }
 }
