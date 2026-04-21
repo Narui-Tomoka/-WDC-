@@ -21,7 +21,8 @@
     position: relative;
     overflow: hidden; // 人物画像がはみ出ることを想定し設定
     @include mix.mq(sp) {
-      aspect-ratio: 540 / 350; // 申し込みボタンの見切れ防止
+      aspect-ratio: auto;
+      min-height: 70vh;
     }
   }
   // むやみに&でつなげない
@@ -87,6 +88,10 @@
     right: 4.7%;
     width: 41%;
     z-index: 5;
+    @include mix.mq(sp) {
+      width: 20rem;
+      right: 0;
+    }
   }
   // section about
   .about {
